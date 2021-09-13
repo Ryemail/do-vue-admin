@@ -1,9 +1,9 @@
 <template>
 	<d-container id="app">
-		<d-header title="工作中心" :logo="logo" fixed />
+		<d-header :title="$store.state.title" :logo="logo" fixed />
 
 		<div class="d-main">
-			<d-menu :default-active="defaultActive" :menus="menus" />
+			<d-menu :default-active="defaultActive" :menus="$store.state.menu" />
 
 			<d-content :title="title" :backs="['tabs1']">
 				<router-view v-if="visible" class="d-router-view" />
@@ -22,15 +22,6 @@ export default {
 	data() {
 		return {
 			defaultActive: '',
-			menus: [
-				{ en_name: 'link', name: 'Link' },
-				{ en_name: 'dialog', name: 'Dialog' },
-				{ en_name: 'modal', name: 'Modal' },
-				{ en_name: 'table', name: 'Table' },
-				{ en_name: 'form', name: 'Form' },
-				{ en_name: 'upload', name: 'Upload' },
-				{ en_name: 'pageTabs', name: 'Tabs' },
-			],
 			logo: logo,
 			visible: true,
 		};

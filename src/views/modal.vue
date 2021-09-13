@@ -50,6 +50,7 @@ export default {
 		},
 
 		onModal(type) {
+			console.log(type);
 			this.$modal({
 				type,
 				message: '555555555555',

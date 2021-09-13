@@ -10,9 +10,9 @@
 				url="/api/tableList"
 				:keys="{ data: 'data.data', total: 'data.total' }"
 				:columns="columns2"
+				:limit="14"
 				:page.sync="page"
 				ref="table"
-				drag
 			>
 				<!-- 使用插槽 -->
 				<template #zip="{ row }">
@@ -29,7 +29,7 @@
 				type="grid"
 				:col="3"
 				url="/api/tableList"
-				:keys="{ data: 'data.data' }"
+				:keys="{ data: 'data.data', total: 'data.total' }"
 				:columns="columns"
 			>
 				<template #default="{ data }">

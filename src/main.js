@@ -13,6 +13,12 @@ import store from './store';
 import './styles/normalize.less';
 import './styles/fonts/iconfont.css';
 
+import './permission';
+
+if (process.env.NODE_ENV === 'development') {
+	require('../mock');
+}
+
 Vue.config.productionTip = false;
 
 new Vue({

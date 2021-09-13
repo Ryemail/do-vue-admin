@@ -18,6 +18,12 @@ yarn serve
 yarn build
 ```
 
+### Compiles and minifies for Staging
+
+```
+yarn staging
+```
+
 ### Lints and fixes files
 
 ```
