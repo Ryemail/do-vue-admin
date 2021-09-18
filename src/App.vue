@@ -1,6 +1,6 @@
 <template>
 	<d-container id="app">
-		<d-header :title="$store.state.title" :logo="logo" fixed />
+		<d-header :title="$store.state.title" :logo="logo" />
 
 		<div class="d-main">
 			<d-menu :default-active="defaultActive" :menus="$store.state.menu" />
