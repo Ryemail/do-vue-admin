@@ -82,6 +82,12 @@ const routes = [
 		name: 'timeline',
 		component: () => import('@/views/timeline.vue'),
 	},
+	{
+		path: '/404',
+		name: '404',
+		component: () => import('@/views/404.vue'),
+	},
+	{ path: '*', name: '*', redirect: '/404' },
 ];
 
 const router = new VueRouter({

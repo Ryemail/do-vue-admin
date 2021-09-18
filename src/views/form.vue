@@ -80,9 +80,6 @@ export default {
 					prop: 'name',
 					label: '姓名',
 					placeholder: '请输入姓名',
-					attrs: {
-						clearable: true,
-					},
 				},
 				{
 					type: 'select',
@@ -108,7 +105,7 @@ export default {
 					type: 'daterange',
 					prop: 'daterange',
 					label: '日期范围',
-					placeholder: ['请选择日期'],
+					placeholder: '请选择日期',
 				},
 				{
 					type: 'datetime',
