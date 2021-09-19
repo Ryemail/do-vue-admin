@@ -61,7 +61,7 @@ router.beforeEach(async (to, from, next) => {
 
 			NProgress.done();
 		} else {
-			// 跳转真实登录页面，当前测试跳转当前页
+			// 跳转真实登录页面，
 			location.href = process.env.VUE_APP_LOGIN;
 		}
 	}

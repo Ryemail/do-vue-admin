@@ -30,6 +30,8 @@
 			</template>
 		</d-form>
 
+		<d-divider />
+
 		<div class="module">
 			<h3 class="module-title">弹窗表单</h3>
 			<d-link icon="zengjia" type="sucDcess" @click="visible = true"> 弹窗表单 </d-link>
