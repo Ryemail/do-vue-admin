@@ -1,5 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const MODE_ARRAY = ['production', 'staging'];
 
 module.exports = {
@@ -12,5 +10,11 @@ module.exports = {
 	},
 	css: {
 		extract: MODE_ARRAY.includes(process.env.NODE_ENV),
+	},
+	chainWebpack: (config) => {
+		config.plugin('html').tap((args) => {
+			args[0].title = '后台管理模版';
+			return args;
+		});
 	},
 };

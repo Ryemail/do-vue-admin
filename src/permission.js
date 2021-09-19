@@ -17,8 +17,7 @@ function createPath(path) {
 	const { menu } = store.state;
 
 	if (menu.length) {
-		const firstItem = menu.slice(0, 1);
-		return getPath(firstItem);
+		return getPath(menu[0]);
 	} else {
 		return path;
 	}
@@ -46,7 +45,7 @@ router.beforeEach(async (to, from, next) => {
 		await store.dispatch('getInfo');
 
 		next({
-			name: createPath(),
+			name: createPath('home'),
 			replace: true,
 		});
 	} else {
@@ -55,7 +54,7 @@ router.beforeEach(async (to, from, next) => {
 
 		if (token && menu.length > 0) {
 			if (to.path === '/login') {
-				next({ name: createPath('/') });
+				next({ name: createPath('home') });
 			} else {
 				next();
 			}
