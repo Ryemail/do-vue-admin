@@ -51,6 +51,7 @@ router.beforeEach(async (to, from, next) => {
 		});
 	} else {
 		const { token, menu } = store.state;
+		const whiteList = ['/login'];
 
 		if (token && menu.length > 0) {
 			if (to.path === '/login') {
@@ -60,9 +61,18 @@ router.beforeEach(async (to, from, next) => {
 			}
 
 			NProgress.done();
+		} else if (whiteList.includes(to.path)) {
+			next();
 		} else {
-			// 跳转真实登录页面，
-			location.href = process.env.VUE_APP_LOGIN;
+			next({
+				replace: true,
+				path: '/login',
+				query: {
+					redirect: to.path,
+				},
+			});
+			//跳转登录号
+			// location.href = process.env.VUE_APP_LOGIN;
 		}
 	}
 });

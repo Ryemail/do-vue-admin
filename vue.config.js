@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const MODE_ARRAY = ['production', 'staging'];
 
 module.exports = {

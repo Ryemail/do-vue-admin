@@ -12,6 +12,11 @@ const routes = [
 		redirect: '/link',
 	},
 	{
+		path: '/login',
+		name: 'login',
+		component: () => import('@/views/login.vue'),
+	},
+	{
 		path: '/link',
 		name: 'link',
 		component: () => import('@/views/link.vue'),
@@ -27,6 +32,7 @@ const routes = [
 			title: 'Modal',
 		},
 	},
+
 	{
 		path: '/pageTabs',
 		name: 'pageTabs',

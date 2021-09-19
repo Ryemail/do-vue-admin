@@ -1,16 +1,19 @@
 <template>
 	<d-container id="app">
-		<d-header :title="$store.state.title" :logo="logo" fixed />
+		<router-view v-if="$route.name === 'login'"></router-view>
+		<template v-else>
+			<d-header :title="$store.state.title" :logo="logo" fixed />
 
-		<div class="d-main">
-			<d-menu :default-active="defaultActive" :menus="$store.state.menu" />
+			<div class="d-main">
+				<d-menu :default-active="defaultActive" :menus="$store.state.menu" />
 
-			<d-content :title="title" :backs="['tabs1']" :exclude="['404']">
-				<router-view v-if="visible" class="d-router-view" />
-			</d-content>
-		</div>
+				<d-content :title="title" :backs="['tabs1']" :exclude="['404']">
+					<router-view v-if="visible" class="d-router-view" />
+				</d-content>
+			</div>
 
-		<d-footer />
+			<d-footer />
+		</template>
 	</d-container>
 </template>
 
