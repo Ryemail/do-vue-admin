@@ -27,7 +27,7 @@ export function createAccountInfo(config) {
 							list: [
 								{ en_name: 'link', name: 'Link' },
 								{ en_name: 'dialog', name: 'Dialog' },
-								{ en_name: 'modal', name: 'Modal' },
+								{ en_name: 'modaeeee', name: 'Modal' },
 								{ en_name: 'table', name: 'Table' },
 								{ en_name: 'form', name: 'Form' },
 								{ en_name: 'upload', name: 'Upload' },

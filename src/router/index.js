@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import './resetRouterMethod';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -81,6 +83,16 @@ const routes = [
 		path: '/timeline',
 		name: 'timeline',
 		component: () => import('@/views/timeline.vue'),
+	},
+	{
+		path: '/404',
+		name: '404',
+		component: () => import('@/views/404.vue'),
+	},
+	{
+		path: '*',
+		name: '*',
+		redirect: '/404',
 	},
 ];
 

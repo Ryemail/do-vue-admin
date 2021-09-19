@@ -9,7 +9,7 @@ function getPath(route) {
 	if (route.child) {
 		return getPath(route.path[0]);
 	} else {
-		return route.en_name;
+		return route.path;
 	}
 }
 
@@ -27,6 +27,17 @@ function createPath(path) {
 router.beforeEach(async (to, from, next) => {
 	NProgress.start();
 
+	if (to.matched.length === 0) {
+		const curr = store.state.menu.find((val) => val.path === to.name);
+
+		next({
+			path: '/404',
+			query: curr,
+		});
+
+		NProgress.done();
+	}
+
 	const Authorization = to.query['Authorization'] || null;
 
 	if (Authorization) {
@@ -35,7 +46,7 @@ router.beforeEach(async (to, from, next) => {
 		await store.dispatch('getInfo');
 
 		next({
-			path: createPath(),
+			name: createPath(),
 			replace: true,
 		});
 	} else {
@@ -43,15 +54,15 @@ router.beforeEach(async (to, from, next) => {
 
 		if (token && menu.length > 0) {
 			if (to.path === '/login') {
-				next({ path: createPath('/') });
-
-				NProgress.done();
+				next({ name: createPath('/') });
 			} else {
 				next();
 			}
+
+			NProgress.done();
 		} else {
 			// 跳转真实登录页面，当前测试跳转当前页
-			next();
+			location.href = process.env.VUE_APP_LOGIN;
 		}
 	}
 });

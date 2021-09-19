@@ -24,7 +24,7 @@
 		<div class="module">
 			<h3 class="module-title">插槽使用</h3>
 		</div>
-		<d-form :form="form2" :label-width="width" :columns="columns2" @event="onEvent">
+		<d-form :form="form2" :label-width="0" :inline="true" :columns="columns2" @event="onEvent">
 			<template #address="{ data }">
 				<el-input v-model="data.address" placeholder="请输入地址" />
 			</template>
@@ -108,7 +108,7 @@ export default {
 					type: 'daterange',
 					prop: 'daterange',
 					label: '日期范围',
-					placeholder: ['请选择日期'],
+					placeholder: '请选择日期',
 				},
 				{
 					type: 'datetime',
@@ -160,7 +160,6 @@ export default {
 				{
 					type: 'input',
 					prop: 'name',
-					label: '姓名',
 					placeholder: '请输入姓名',
 					slot: 'default',
 				},
@@ -168,7 +167,6 @@ export default {
 					type: 'slot',
 					prop: 'address',
 					slot: 'address',
-					label: '地址',
 				},
 			],
 		};

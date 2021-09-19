@@ -5,7 +5,7 @@
 		<div class="d-main">
 			<d-menu :default-active="defaultActive" :menus="$store.state.menu" />
 
-			<d-content :title="title" :backs="['tabs1']">
+			<d-content :title="title" :backs="['tabs1']" :exclude="['404']">
 				<router-view v-if="visible" class="d-router-view" />
 			</d-content>
 		</div>
@@ -28,7 +28,7 @@ export default {
 	},
 	watch: {
 		$route({ matched }) {
-			this.defaultActive = matched[0].name;
+			this.defaultActive = matched[0] ? matched[0].name : '';
 		},
 	},
 	computed: {
