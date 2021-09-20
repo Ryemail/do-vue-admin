@@ -33,7 +33,9 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 160px;
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: 180px;
 	.g-bullshit-image {
 		width: 400px;
 		margin-right: 50px;
@@ -43,7 +45,6 @@ export default {
 		line-height: 40px;
 		color: #1482f0;
 		margin-bottom: 20px;
-		animation-fill-mode: forwards;
 	}
 
 	.g-bullshit-headline {
@@ -51,16 +52,12 @@ export default {
 		line-height: 24px;
 		color: #222;
 		margin-bottom: 10px;
-		animation-delay: 0.1s;
-		animation-fill-mode: forwards;
 	}
 	.g-bullshit-info {
 		font-size: 13px;
 		line-height: 21px;
 		color: grey;
 		margin-bottom: 30px;
-		animation-delay: 0.2s;
-		animation-fill-mode: forwards;
 	}
 }
 </style>

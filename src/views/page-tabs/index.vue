@@ -2,7 +2,9 @@
 	<div class="module">
 		<d-page-tabs :default-active="$route.name" router :tabs="tabs" />
 
-		<router-view />
+		<transition name="fade-transform" mode="out-in">
+			<router-view />
+		</transition>
 	</div>
 </template>
 

@@ -20,10 +20,11 @@
 				</el-form-item>
 				<el-form-item label="密码" prop="password">
 					<el-input
+						:type="type"
 						placeholder="请输入密码"
+						autocomplete="pwd"
+						@focus="type = 'password'"
 						v-model="form.password"
-						autocomplete="new-autocomplete"
-						show-password
 					/>
 				</el-form-item>
 
@@ -41,6 +42,7 @@ export default {
 
 	data() {
 		return {
+			type: 'text',
 			form: { user: '', password: '' },
 			rules: {
 				user: [{ required: true, message: '请输入账号' }],
