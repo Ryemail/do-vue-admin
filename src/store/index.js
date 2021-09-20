@@ -27,14 +27,14 @@ export default new Vuex.Store({
 		title: 'Admin',
 	},
 	mutations: {
-		updateToken(store, val) {
-			store.token = val;
+		updateToken(state, val) {
+			state.token = val;
 		},
-		updateTitle(store, val) {
-			store.title = val;
+		updateTitle(state, val) {
+			state.title = val;
 		},
-		updateMenu(store, val) {
-			store.menu = val;
+		updateMenu(state, val) {
+			state.menu = val;
 		},
 	},
 	actions: {
