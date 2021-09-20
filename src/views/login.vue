@@ -9,21 +9,21 @@
 			<el-form
 				class="d-login-body"
 				:model="form"
-				status-icon
 				:rules="rules"
 				ref="login"
 				label-width="0"
 				label-position="top"
+				:hide-required-asterisk="true"
 			>
 				<el-form-item label="账号" prop="user">
 					<el-input v-model="form.user" placeholder="请输入账号" />
 				</el-form-item>
 				<el-form-item label="密码" prop="password">
 					<el-input
-						type="password"
 						placeholder="请输入密码"
 						v-model="form.password"
 						autocomplete="new-autocomplete"
+						show-password
 					/>
 				</el-form-item>
 
@@ -43,8 +43,8 @@ export default {
 		return {
 			form: { user: '', password: '' },
 			rules: {
-				user: [{ trigger: 'blur' }],
-				password: [{ trigger: 'blur' }],
+				user: [{ required: true, message: '请输入账号' }],
+				password: [{ required: true, message: '请输入密码' }],
 			},
 		};
 	},
@@ -114,10 +114,14 @@ export default {
 		text-align: center;
 		border-bottom: 1px solid #e9e9e9;
 	}
+	::v-deep .el-form-item__error {
+		position: static;
+		padding: 6px 0 0;
+	}
 	::v-deep .d-login-body {
 		padding: 30px 40px 25px;
 		.el-form-item {
-			margin-bottom: 24px;
+			margin-bottom: 16px;
 			.el-form-item__label {
 				height: 1;
 				line-height: 1;
@@ -127,6 +131,7 @@ export default {
 	.width-100 {
 		width: 100%;
 		padding: 12px 20px;
+		margin-top: 40px;
 	}
 }
 </style>

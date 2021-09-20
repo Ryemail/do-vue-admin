@@ -19,6 +19,7 @@
 
 <script>
 import logo from './assets/images/workbench.png';
+import { visibilitychange } from './utils/visibilitychange';
 
 export default {
 	name: 'App',
@@ -53,6 +54,17 @@ export default {
 				});
 			},
 		};
+	},
+	created() {
+		// 监听页面数据
+		visibilitychange((hidden) => {
+			if (!hidden) {
+				this.$store.dispatch('resetLoginStatus');
+				this.$router.push({
+					path: '/login',
+				});
+			}
+		});
 	},
 };
 </script>

@@ -58,8 +58,6 @@ router.beforeEach(async (to, from, next) => {
 			} else {
 				next();
 			}
-
-			NProgress.done();
 		} else if (whiteList.includes(to.path)) {
 			next();
 		} else {
@@ -73,6 +71,8 @@ router.beforeEach(async (to, from, next) => {
 			//跳转登录号
 			// location.href = process.env.VUE_APP_LOGIN;
 		}
+
+		NProgress.done();
 	}
 });
 

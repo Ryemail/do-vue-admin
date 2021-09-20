@@ -59,6 +59,11 @@ export default new Vuex.Store({
 				}
 			}
 		},
+		resetLoginStatus({ commit }) {
+			commit('updateMenu', []);
+			commit('updateTitle', '');
+			commit('updateToken', null);
+		},
 	},
 	plugins: [
 		createPersistedState({
