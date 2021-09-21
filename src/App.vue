@@ -5,21 +5,8 @@
 </template>
 
 <script>
-import { visibilitychange } from './utils/visibilitychange';
-
 export default {
 	name: 'App',
-	created() {
-		// 监听页面隐藏
-		visibilitychange((hidden) => {
-			if (!hidden) {
-				this.$store.dispatch('resetLoginStatus');
-				this.$router.push({
-					path: '/login',
-				});
-			}
-		});
-	},
 };
 </script>
 

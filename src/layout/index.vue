@@ -31,8 +31,6 @@ export default {
 			immediate: true,
 			handler({ matched }) {
 				this.defaultActive = matched[1] ? matched[1].name : '';
-
-				// console.log();
 			},
 		},
 	},
