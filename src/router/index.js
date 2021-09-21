@@ -91,6 +91,11 @@ const routes = [
 				component: () => import('@/views/steps.vue'),
 			},
 			{
+				path: 'statistic',
+				name: 'statistic',
+				component: () => import('@/views/statistic.vue'),
+			},
+			{
 				path: 'timeline',
 				name: 'timeline',
 				component: () => import('@/views/timeline.vue'),
