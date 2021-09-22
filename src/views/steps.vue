@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<d-steps :active="active" :show-current="true">
+		<d-steps :active="active">
 			<d-step title="批次信息">
 				<div><p>563563</p></div>
 			</d-step>
@@ -16,7 +16,7 @@
 export default {
 	data() {
 		return {
-			active: 3,
+			active: 2,
 		};
 	},
 };

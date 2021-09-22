@@ -1,24 +1,13 @@
 <template>
-	<div class="dom-page-404">
-		<img class="dom-bullshit-image" src="~@/assets/images/404.png" />
-		<div class="dom-bullshit">
-			<div class="bullshit-oops">OOPS!</div>
-			<div class="bullshit-headline">
-				The webmaster said that you can not enter this page...
+	<div class="g-page-404">
+		<img class="g-bullshit-image" src="~@/assets/images/404.svg" />
+		<div class="g-bullshit">
+			<div class="g-bullshit-oops">哎呀!</div>
+			<div class="g-bullshit-headline">您访问的页面{{ title }}不存在</div>
+			<div class="g-bullshit-info">
+				请检查您输入的URL是否正确，或单击下面的按钮返回上一页.
 			</div>
-			<div class="bullshit-info">
-				Please check that the URL you entered is correct, or click the button below to
-				return to the homepage.
-			</div>
-			<el-button
-				type="primary"
-				round
-				size="small"
-				@click="$router.back()"
-				class="dom-bullshit-return"
-			>
-				Back
-			</el-button>
+			<el-button type="primary" size="small" @click="$router.back()"> 返回上一页 </el-button>
 		</div>
 	</div>
 </template>
@@ -26,40 +15,49 @@
 <script>
 export default {
 	name: 'Error404',
+
+	computed: {
+		title() {
+			const path = this.$route.query.path;
+
+			if (path) return `"${path}"`;
+
+			return '';
+		},
+	},
 };
 </script>
 
 <style lang="less" scoped>
-.dom-page-404 {
+.g-page-404 {
 	display: flex;
 	align-items: center;
-	padding: 100px 100px;
-	.dom-bullshit-image {
-		width: 600px;
+	justify-content: center;
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: 180px;
+	.g-bullshit-image {
+		width: 400px;
+		margin-right: 50px;
 	}
-	.bullshit-oops {
+	.g-bullshit-oops {
 		font-size: 32px;
 		line-height: 40px;
 		color: #1482f0;
 		margin-bottom: 20px;
-		animation-fill-mode: forwards;
 	}
 
-	.bullshit-headline {
+	.g-bullshit-headline {
 		font-size: 20px;
 		line-height: 24px;
 		color: #222;
 		margin-bottom: 10px;
-		animation-delay: 0.1s;
-		animation-fill-mode: forwards;
 	}
-	.bullshit-info {
+	.g-bullshit-info {
 		font-size: 13px;
 		line-height: 21px;
 		color: grey;
 		margin-bottom: 30px;
-		animation-delay: 0.2s;
-		animation-fill-mode: forwards;
 	}
 }
 </style>
