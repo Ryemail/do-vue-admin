@@ -23,11 +23,25 @@ function createPath(path) {
 	}
 }
 
+function getCurrentMenu(menu, name) {
+	for (let index = 0; index < menu.length; index++) {
+		const element = menu[index];
+
+		if (element.child) {
+			return getCurrentMenu(element.child, name);
+		} else if (element.path === name) {
+			return element;
+		}
+	}
+
+	return {};
+}
+
 router.beforeEach(async (to, from, next) => {
 	NProgress.start();
 
 	if (to.matched.length === 0) {
-		const curr = store.state.menu.find((val) => val.path === to.name);
+		const curr = getCurrentMenu(store.state.menu, to.name);
 
 		next({
 			path: '/404',
