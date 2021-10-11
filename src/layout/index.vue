@@ -30,7 +30,7 @@ export default {
 		$route: {
 			immediate: true,
 			handler({ matched }) {
-				this.defaultActive = matched[1] ? matched[1].name : '';
+				this.defaultActive = matched[1].name === '404' ? '' : matched[1].name;
 			},
 		},
 	},

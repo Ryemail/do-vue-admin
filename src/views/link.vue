@@ -19,6 +19,8 @@
 			<d-link icon="zengjia" @click="onClick" type="success"> 点击事件 </d-link>
 		</div>
 
+		<el-button @click="onpush">ddd</el-button>
+
 		<div class="module">
 			<h3 class="module-title">路由跳转</h3>
 			<d-link icon="checked" to="/modal" type="success"> 路由跳转 </d-link>
@@ -38,6 +40,9 @@ export default {
 	methods: {
 		onClick() {
 			alert('点击事件');
+		},
+		onpush() {
+			this.$router.push('/admin/steps');
 		},
 	},
 };

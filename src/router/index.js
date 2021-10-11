@@ -121,4 +121,16 @@ const router = new VueRouter({
 	routes,
 });
 
+// const routerTransitionTo = router.history.transitionTo;
+
+// router.history.transitionTo = function transitionTo(location, onComplete, onAbort) {
+// 	if (typeof location === 'object') {
+// 		location.query = { ...location.query, v: 1 };
+// 	} else {
+// 		location = location + '?v=1';
+// 	}
+
+// 	routerTransitionTo.call(this, location, onComplete, onAbort);
+// };
+
 export default router;
