@@ -35,7 +35,6 @@ export default {
 	justify-content: center;
 	height: 100%;
 	box-sizing: border-box;
-	padding-top: 180px;
 	.g-bullshit-image {
 		width: 400px;
 		margin-right: 50px;

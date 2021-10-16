@@ -3215,10 +3215,10 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
-do-element@1.0.34:
-  version "1.0.34"
-  resolved "https://registry.yarnpkg.com/do-element/-/do-element-1.0.34.tgz#a01ba57749508fbd65276b1aebba0785e22dde64"
-  integrity sha512-q9dZ8fvj5fdfIUP87fPTjdsQw03Jc8KMSC76KNQpHzebAOz5X589iSFmyNVzmGRICQtTAGngXG7Oo5sG6HeEKA==
+do-element@1.0.38:
+  version "1.0.38"
+  resolved "https://registry.yarnpkg.com/do-element/-/do-element-1.0.38.tgz#eb4b67b2f11473523b61d4e18ab16f1df9f3bddd"
+  integrity sha512-Jz8k9+h043p0RU3R1976rcxBcHDuZh4uLm8OmWvzRbX6QltDU4T06PwpvowMTGXbc4ZKGkj0pEZGlIUAct7kNQ==
   dependencies:
     core-js "3"
 

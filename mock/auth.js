@@ -27,7 +27,7 @@ export function createAccountInfo(config) {
 							list: [
 								{ en_name: 'link', name: 'Link 文字链接' },
 								{ en_name: 'dialog', name: 'Dialog 弹窗' },
-								{ en_name: 'modal', name: 'Modal 提示框' },
+								{ en_name: 'modal4', name: 'Modal 提示框' },
 								{ en_name: 'table', name: 'Table 表格' },
 								{ en_name: 'form', name: 'Form 表单' },
 								{ en_name: 'upload', name: 'Upload 文件上传' },
